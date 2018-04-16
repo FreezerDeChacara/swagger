@@ -1,6 +1,7 @@
 package br.com.freezer.doc.controller
 
 import br.com.freezer.doc.model.Carro
+import br.com.freezer.doc.service.CarroService
 import io.swagger.annotations.Api
 import io.swagger.annotations.ApiOperation
 import org.springframework.http.ResponseEntity
@@ -16,11 +17,12 @@ import org.springframework.web.bind.annotation.RestController
 @Api("Consulta de carros")
 @RestController
 @RequestMapping("/carros")
-class CarroController {
+class CarroController(val carroService: CarroService) {
 
     @ApiOperation("Cadastra")
     @PostMapping
     fun cadastrar(@RequestBody carro: Carro): ResponseEntity<String>  {
+        carroService.cadastrarCarro(carro)
         return ResponseEntity.ok("Veículo cadastrado.")
     }
 
@@ -42,7 +44,7 @@ class CarroController {
     @ApiOperation("Carregar todos")
     @GetMapping("/loadall")
     fun carregarTodos(): ResponseEntity<List<Carro>> {
-        return ResponseEntity.ok(emptyList())
+        return ResponseEntity.ok(carroService.loadAll().toList())
     }
 
 }
