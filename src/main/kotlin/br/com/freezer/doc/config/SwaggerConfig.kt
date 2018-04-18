@@ -15,10 +15,10 @@ import java.util.*
 
 @Configuration
 @EnableSwagger2
-open class SwaggerConfig(@Value("\${config.swagger.path:br.com.freezer.doc.controller}") private val pathSwagger: String) {
+class SwaggerConfig(@Value("\${config.swagger.path:br.com.freezer.doc.controller}") private val pathSwagger: String) {
 
     @Bean
-    open fun api(): Docket {
+    fun api(): Docket {
         return Docket(DocumentationType.SWAGGER_2)
             .select()
             .apis(RequestHandlerSelectors.basePackage(pathSwagger))

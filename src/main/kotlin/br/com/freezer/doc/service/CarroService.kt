@@ -5,7 +5,7 @@ import br.com.freezer.doc.model.Carro
 import org.springframework.stereotype.Service
 
 @Service
-class CarroService(val carroRepository: CarroRepository) {
+class CarroService(private val carroRepository: CarroRepository) {
 
     fun cadastrarCarro(carro: Carro) {
         carroRepository.save(carro)
