@@ -1,4 +1,4 @@
-package br.com.freezer.doc.controller
+package br.com.freezer.doc.controller.external
 
 import br.com.freezer.doc.model.Carro
 import br.com.freezer.doc.service.CarroService
