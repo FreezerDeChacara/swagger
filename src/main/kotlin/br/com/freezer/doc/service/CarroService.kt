@@ -11,5 +11,8 @@ class CarroService(private val carroRepository: CarroRepository) {
         carroRepository.save(carro)
     }
 
-    fun loadAll() =  carroRepository.findAll()
+    fun loadAll() = carroRepository.findAll()!!
+
+    fun delete(id: Long) = carroRepository.delete(id.toString())
+
 }
