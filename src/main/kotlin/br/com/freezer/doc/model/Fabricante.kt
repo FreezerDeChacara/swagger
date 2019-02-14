@@ -7,7 +7,7 @@ import org.springframework.data.annotation.TypeAlias
 
 @TypeAlias("fabricante")
 @ApiModel
-class Fabricante(
+data class Fabricante(
     @ApiModelProperty(
         example = "1",
         position = 1
@@ -19,5 +19,9 @@ class Fabricante(
     @ApiModelProperty(
         example = "1981",
         position = 3
-    ) val anoFundacao: String
+    ) val anoFundacao: String,
+    @ApiModelProperty(
+        example = "[{\"nome\":\"Skyline\"},{\"nome\":\"GTR\"},{\"nome\":\"350Z\"}]",
+        position = 4
+    ) val modelos: List<Modelo>
 )
