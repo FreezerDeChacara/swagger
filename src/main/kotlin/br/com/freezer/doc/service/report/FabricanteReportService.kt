@@ -61,6 +61,7 @@ class FabricanteReportService(private val resourceLoader: ResourceLoader) {
 
     companion object {
         private const val FABRICANTE_JRXML = "Simple_Blue.jrxml"
+        private const val FABRICANTE = "jornada.jrxml"
     }
 
 
